@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br><br><br><br><br><br><br><br><br><br>
+
+<div class="typewriter">
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+<br><br>
+</div>
+<div class="center1">
+<form action="/about1" method="post" enctype="multipart/form-data" >
+    <div >
+    <input type="file" name="file" />
+    <br><br>
+    <input style="text-align: center;" type="submit" value="Upload" align="left">
+</div>
+<br><br><br><br><br><br><br><br>
+</div>
+    {% endblock %}

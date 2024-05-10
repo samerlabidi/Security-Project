@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Image Security</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+.link {
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.5em;
+  line-height: 10%;
+  color: #9e9ba4;
+  display: inline-block;
+}
+    .link--kukuri {
+  text-transform: uppercase;
+  font-weight: 900;
+  overflow: hidden;
+  line-height: 0.75;
+  color: #b2b0a9;
+}
+
+.link--kukuri:hover {
+  color: #b2b0a9;
+}
+
+.link--kukuri::after {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 100%;
+  top: 50%;
+  margin-top: -8px;
+  right: 0;
+  background: #F9F9F9;
+  transform: translate3d(-100%,0,0);
+  transition: transform 0.4s;
+  transition-timing-function: cubic-bezier(0.7,0,0.3,3);
+}
+
+.link--kukuri:hover::after {
+  transform: translate3d(100%,0,0);
+}
+
+.link--kukuri::before {
+  content: attr(data-letters);
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  color: #e7e435;
+  white-space: nowrap;
+  width: 0%;
+  transition: width 0.4s 0.3s;
+}
+
+.link--kukuri:hover::before {
+  width: 100%;
+}
+
+
+.center1 {
+  text-align: center;
+}
+
+
+
+
+/*.typewriter h3{
+  transition-delay: 5s;
+  overflow: hidden; 
+  border-right: .15em solid orange;
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}*/
+.jumbotron h1 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/*
+/* The typewriter cursor effect 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}*/
+h2 {
+    font-family: 'Press Start 2P', cursive;
+}
+h3 {
+    font-family: 'Press Start 2P', cursive;
+}
+body{
+            background-color: black;
+            color: #2bff00;
+        }
+p {
+    color: white;
+}
+</style>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a href="/" class="navbar-brand">
+<img border="0" alt="Homepage" src="..\static\content\logo.png" width="100" height="50"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="font-family: 'Orbitron', sans-serif;padding-bottom: 1%;padding-top:1%;">
+                  
+                    <li><a class="link link--kukuri" href="{{ url_for('about') }}" data-letters="ENCRYPTION">Encryption</a></li>
+                    <li><a class="link link--kukuri" href="{{ url_for('contact') }}" data-letters="DECRYPTION" style="padding-left: 5%">Decryption</a>
+                    <li><a class="link link--kukuri" href="{{ url_for('team') }}" data-letters="TEAM" style="padding-left: 10%">Team</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p style="text-align:center;,position:center" >&copy; Project By : Montaha Ghabry - Mohamed Yassine Mekni - Samer Labidi - Zaineb Bouriga</p>
+        </footer>
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

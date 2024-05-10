@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br><br><br><br><br><br><br><br>
+
+<div class="typewriter">
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+<br><br><br>
+<p>The file name is {{ name }}</p>
+<div class="container" align="center">
+	<br>
+    <a href="/return-file1" download=""><button class="btn btn-default btn-primary">Download</button></button></a>
+    <br><br><br><br><br><br><br><br><br><br>
+</div>
+{% endblock %}
